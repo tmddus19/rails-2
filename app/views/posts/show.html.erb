@@ -1,0 +1,6 @@
+<h1><%= @post.id%>번 째글</h1>
+<p>제목 : <%= @post.title%></p>
+<p>내용 : <%= @post.content%></p>
+<a href="/">뒤로가기</a>
+<a href="/posts/edit/<%= @post.id%>">수정하기</a>
+<a href="/posts/destroy/<%= @post.id%>">삭제하기</a>

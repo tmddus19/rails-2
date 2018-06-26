@@ -11,6 +11,10 @@ Rails.application.routes.draw do
 
   get '/users/getout'
   
+  get '/users/edit'
+  
+  get '/users/update'
+  
   
 
     get '/' => 'posts#index'

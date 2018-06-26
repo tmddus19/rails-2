@@ -55,4 +55,17 @@ class UsersController < ApplicationController
     session.clear
     redirect_to '/'
   end
+  
+  def edit
+    @user = User.find(session[:id])
+  end
+  
+  def update
+    @user = User.find(session[:id])
+    @user.update(
+      username: params[:username],
+      password: params[:password]
+    )
+    redirect_to '/'
+  end
 end

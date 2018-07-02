@@ -68,4 +68,10 @@ class UsersController < ApplicationController
     )
     redirect_to '/'
   end
+  
+  def mypage
+    #현재 접속한 유저가 쓴 모든 글을 보여준다.
+    @posts = User.find(session[:id]).posts
+    @replies = User.find(session[:id]).replies
+  end
 end

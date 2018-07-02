@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   get '/users/getout'
   
+  get '/users/mypage'
+  
   get '/users/edit'
   
   get '/users/update'
@@ -24,4 +26,5 @@ Rails.application.routes.draw do
     get '/posts/edit/:id' => 'posts#edit'
     get '/posts/update/:id' => 'posts#update'
     get '/posts/destroy/:id' => 'posts#destroy'
+    get '/posts/:id/write_reply' => 'posts#write_reply'
 end

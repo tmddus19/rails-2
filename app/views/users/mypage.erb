@@ -1,0 +1,9 @@
+<h1>마이페이지</h1>
+<p>당신이 쓴 글들 : <%= @posts.size %>개</p>
+<% @posts.each do |p| %>
+    <%= p.title %> | <%= p.content %><br>
+<% end %>
+<p>당신이 쓴 댓글들 : <%= @replies.size%>개</p>
+<% @replies.each do |r| %>
+    <%= r.content %><br>
+<% end %>

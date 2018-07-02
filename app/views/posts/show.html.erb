@@ -1,6 +1,19 @@
-<h1><%= @post.id%>번 째글</h1>
-<p>제목 : <%= @post.title%></p>
-<p>내용 : <%= @post.content%></p>
+<h1><%= @post.id %>번째 글</h1>
+<p>제목 : <%= @post.title %></p>
+<p>내용 : <%= @post.content %></p>
+<p>작성자 : <%= @post.user.username %></p>
 <a href="/">뒤로가기</a>
-<a href="/posts/edit/<%= @post.id%>">수정하기</a>
-<a href="/posts/destroy/<%= @post.id%>">삭제하기</a>
+<a href="/posts/edit/<%= @post.id %>">수정하기</a>
+<!--삭제하기-->
+<a href="/posts/destroy/<%= @post.id %>">삭제하기</a>
+
+<form action="/posts/<%= @post.id %>/write_reply">
+    <input type="text" name="reply">
+    <input type="submit">
+</form>
+<hr>
+<!--해당 글에 속하는 댓글들을 다 보여준다.-->
+<% @post.replies.reverse.each do |r| %>
+    <%= r.user.username %> : <%= r.content %><br>
+<% end %>
+
